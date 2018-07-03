@@ -1,0 +1,42 @@
+{
+  "name": "eSign",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "private": true,
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^0.11.7",
+    "axios": "0.18.0",
+    "body-parser": "1.18.3",
+    "concurrently": "3.6.0",
+    "express": "4.16.3",
+    "mongoose": "5.1.8",
+    "say": "0.15.0",
+    "vega-embed": "~3.0.0"
+  },
+  "scripts": {
+    "watch": "cross-env NODE_ENV=development parcel index.html --no-hmr --open",
+    "build": "cross-env NODE_ENV=production parcel build index.html  --no-minify --public-url ./",
+    "postinstall": "yarn upgrade --pattern @tensorflow",
+    "start-server": "node server.js",
+    "test": "concurrently \"npm run watch\" \"npm run start-server\""
+  },
+  "devDependencies": {
+    "babel-plugin-transform-runtime": "~6.23.0",
+    "babel-polyfill": "~6.26.0",
+    "babel-preset-env": "~1.6.1",
+    "clang-format": "~1.2.2",
+    "cross-env": "^5.1.6",
+    "parcel-bundler": "~1.8.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "ie >= 11",
+    "ios >= 10",
+    "android >= 6"
+  ]
+}
