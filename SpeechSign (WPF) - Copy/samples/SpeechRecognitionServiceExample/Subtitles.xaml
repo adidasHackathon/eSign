@@ -1,0 +1,22 @@
+﻿<Window x:Class="Microsoft.CognitiveServices.SpeechRecognition.Subtitles"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Microsoft.CognitiveServices.SpeechRecognition"
+        mc:Ignorable="d"
+        Title="Subtitles" Height="300" Width="300" Topmost="True" ShowInTaskbar="False" SizeToContent="WidthAndHeight"
+        AllowsTransparency="True" WindowStyle="None" MouseLeave="hideShadow" MouseDown="allowFormToMove">
+    <Window.Background>
+        <SolidColorBrush x:Name="opacityBrush" Opacity="0" Color="White"/>
+    </Window.Background>
+    <Grid MouseEnter="showShadow" MouseMove="showShadow">
+        <TextBlock x:Name="textA" Text="I'm here to create" Foreground="Red" Grid.Column="0" Grid.Row="0" FontSize="50" >
+            <TextBlock.Effect>
+                <BlurEffect Radius="4.0" KernelType="Box"/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <TextBlock x:Name="textB" Text="I'm here to create" Foreground="White" Grid.Column="0" Grid.Row="0" FontSize="50" MouseWheel="resizeText" SizeChanged="recenterElement" />
+
+    </Grid>
+</Window>
